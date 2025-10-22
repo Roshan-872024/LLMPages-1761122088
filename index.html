@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashravan's Journey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .content {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container content">
+        <h1 class="mb-4">Welcome to Ashravan's World</h1>
+        <p class="lead">Explore various intriguing files below:</p>
+        <ul class="list-group mb-4">
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">ashravan.txt</a> - A short story featuring Ashravan.</li>
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">dilemma.json</a> - An ethical dilemma for autonomous vehicles.</li>
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">about.md</a> - A brief description of me in three words.</li>
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">pelican.svg</a> - A charming pelican riding a bicycle.</li>
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">restaurant.json</a> - A restaurant recommendation in Delhi.</li>
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">prediction.json</a> - Prediction for the Fed Funds rate in December 2025.</li>
+            <li class="list-group-item"><a href="https://huggingface.co/spaces/Roshan0510/tds_project_1/fetch" target="_blank">uid.txt</a> - UID attachment.</li>
+        </ul>
+        <footer class="footer">
+            <div class="text-muted">&copy; 2023 Created by Anonymous Developer</div>
+        </footer>
+    </div>
+
+    <script>
+        const BASE_URL = "https://huggingface.co/spaces/Roshan0510/tds_project_1";
+        
+        // Fallback data for demonstration
+        const fallbackDilemma = {
+            people: 3,
+            case_1: { swerve: true, reason: "Less casualties by swerving." },
+            case_2: { swerve: false, reason: "It's a child, priority is life." }
+        };
+
+        // Example function for fetching restaurant data
+        async function fetchRestaurantData(city) {
+            const geoURL = `${BASE_URL}/search?name=${city}`;
+            const res = await fetch(`${BASE_URL}/fetch?url=${encodeURIComponent(geoURL)}`);
+            if (res.ok) {
+                const data = await res.json();
+                console.log(data);
+                // Process and display data
+            } else {
+                console.log("Using fallback data");
+                // Use fallback data if the fetch fails
+            }
+        }
+
+        // Example function for prediction data
+        const predictionData = {
+            rate: 0.05,
+            reason: "Projected growth and inflation."
+        };
+
+        // Call functions or handle data as needed
+    </script>
+</body>
+
+</html>
